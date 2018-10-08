@@ -1,6 +1,6 @@
 #! /bin/bash
 
-printf "You are about to install the program: Git, Nginx, PHP. \n
+printf "You are about to install the program: Git, Nginx, PHP, Composer, Xdebug, MySQL, PostgreSQL, Redis server, Memcached \n
 Press ENTER to continue: \n"
 read enter
 
@@ -38,11 +38,29 @@ sudo service php7.2-fpm restart
 
 
 ## Composer
-## 
+printf "============ Install Composer ============ \n"
+cd ~
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+HASH=93b54496392c062774670ac18b134c3b3a95e5a5e5c8f1a9f115f203b75bf9a129d5daa8ba6a13e2cc8a1da0806388a8
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+cd /
 
 
-## Xdebug
-## 
+## Xdebug for php7.2-fpm
+printf "============ Install Xdebug ============ \n"
+sudo apt install php-xdebug
+sudo sh -c "echo '
+zend_extension=xdebug.so
+xdebug.show_error_trace = 1
+
+xdebug.default_enable=1
+xdebug.remote_port=9000
+xdebug.remote_host=127.0.0.1
+xdebug.remote_enable=1
+xdebug.idekey=IDEA
+' >> /etc/php/7.2/mods-available/xdebug.ini"
+sudo service php7.2-fpm restart
 
 
 ## MySQL
@@ -86,3 +104,6 @@ printf "------------------------ \n"
 redis-server -v
 printf "------------------------ \n"
 memcached -V
+printf "------------------------ \n"
+composer -V
+printf "------------------------ \n"
