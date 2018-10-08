@@ -37,10 +37,6 @@ sudo apt-get install php7.2-fpm php-pear php7.2-dev php7.2-gd php7.2-zip
 sudo service php7.2-fpm restart
 
 
-## Composer
-## 
-
-
 ## Xdebug
 ## 
 
@@ -59,15 +55,25 @@ sudo apt-get install php7.2-pgsql
 sudo service php7.2-fpm restart
 
 
+## Redis server
+printf "============ Install Redis server ============ \n"
+sudo apt install redis-server
+
+
+## Composer
+## 
+
+
 ## All install tools
 printf "============ Version ============ \n"
 git --version
-printf "_______ \n"
+printf "------------------------ \n"
 nginx -v
-printf "_______ \n"
+printf "------------------------ \n"
 php -v
-printf "_______ \n"
+printf "------------------------ \n"
 mysql -V
-printf "_______ \n"
+printf "------------------------ \n"
 psql --version
-printf "_______ \n"
+printf "------------------------ \n"
+redis-server -v
