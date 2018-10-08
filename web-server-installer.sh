@@ -37,6 +37,10 @@ sudo apt-get install php7.2-fpm php-pear php7.2-dev php7.2-gd php7.2-zip
 sudo service php7.2-fpm restart
 
 
+## Composer
+## 
+
+
 ## Xdebug
 ## 
 
@@ -60,8 +64,11 @@ printf "============ Install Redis server ============ \n"
 sudo apt install redis-server
 
 
-## Composer
-## 
+## Memcached
+printf "============ Install Memcached ============ \n"
+sudo apt-get install memcached netcat
+sudo apt-get install php-memcached
+sudo service php7.2-fpm restart
 
 
 ## All install tools
@@ -77,3 +84,5 @@ printf "------------------------ \n"
 psql --version
 printf "------------------------ \n"
 redis-server -v
+printf "------------------------ \n"
+memcached -V
