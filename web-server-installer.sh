@@ -5,13 +5,9 @@ Press ENTER to continue: \n"
 read enter
 
 
-## Set variable
-userName=igor
-
 ## Preparing to install
 sudo apt update
 sudo apt upgrade
-
 
 
 ## Git
@@ -24,7 +20,7 @@ git config --global credential.helper "cache --timeout=86400"
 ## Nginx
 printf "============ Install Nginx ============ \n"
 sudo apt install nginx
-sudo chown -R $userName:$userName /var/www
+sudo chown -R $USER:$USER /var/www
 
 
 ## PHP
