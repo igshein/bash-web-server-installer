@@ -92,18 +92,25 @@ sudo service php7.2-fpm restart
 ## All install tools
 printf "============ Version ============ \n"
 git --version
-printf "------------------------ \n"
+printf "________________________ \n"
+
 nginx -v
-printf "------------------------ \n"
+printf "________________________ \n"
+
 php -v
-printf "------------------------ \n"
-mysql -V
-printf "------------------------ \n"
-psql --version
-printf "------------------------ \n"
-redis-server -v
-printf "------------------------ \n"
-memcached -V
-printf "------------------------ \n"
+printf "________________________ \n"
+
 composer -V
-printf "------------------------ \n"
+printf "________________________ \n"
+
+mysql -V
+printf "________________________ \n"
+
+psql --version
+printf "________________________ \n"
+
+redis-server -v
+printf "________________________ \n"
+
+memcached -V
+printf "________________________ \n"
