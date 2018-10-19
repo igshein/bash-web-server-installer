@@ -90,7 +90,7 @@ sudo service php7.2-fpm restart
 
 
 ## Node.Js & NPM
-printf "============ Install Memcached ============ \n"
+printf "============ Install Node.Js & NPM ============ \n"
 sudo apt-get update
 sudo apt-get install build-essential libssl-dev
 curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh -o install_nvm.sh
