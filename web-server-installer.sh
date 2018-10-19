@@ -1,6 +1,6 @@
 #! /bin/bash
 
-printf "You are about to install the program: Git, Nginx, PHP, Composer, Xdebug, MySQL, PostgreSQL, Redis server, Memcached \n
+printf "You are about to install the program: Git, Nginx, PHP, Composer, Xdebug, MySQL, PostgreSQL, Redis server, Memcached, Node.Js & NPM \n
 Press ENTER to continue: \n"
 read enter
 
