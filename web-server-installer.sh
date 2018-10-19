@@ -89,6 +89,19 @@ sudo apt-get install php-memcached
 sudo service php7.2-fpm restart
 
 
+## Node.Js & NPM
+printf "============ Install Memcached ============ \n"
+sudo apt-get update
+sudo apt-get install build-essential libssl-dev
+curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh -o install_nvm.sh
+bash install_nvm.sh
+source ~/.profile
+nvm ls-remote
+nvm install 10.0.0
+nvm use 10.0.0
+cd /
+
+
 ## All install tools
 printf "============ Version ============ \n"
 git --version
@@ -114,3 +127,8 @@ printf "________________________ \n"
 
 memcached -V
 printf "________________________ \n"
+
+node -v
+nvm ls
+printf "________________________ \n"
+
