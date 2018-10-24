@@ -26,11 +26,16 @@ sudo chown -R $USER:$USER /var/www
 ## PHP
 printf "============ Install PHP ============ \n"
 
+# For Debian
 sudo apt install ca-certificates apt-transport-https 
 wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -
 echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
-sudo apt update
 
+# For Ubuntu
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ondrej/php
+
+sudo apt-get update
 sudo apt-get install php7.2
 sudo apt-get install php7.2-cli php7.2-common php7.2-curl php7.2-mbstring php7.2-dom php7.2-xml
 sudo apt-get install php7.2-fpm php-pear php7.2-dev php7.2-gd php7.2-zip
@@ -113,6 +118,9 @@ printf "________________________ \n"
 php -v
 printf "________________________ \n"
 
+echo "php7.2-fpm -" && service php7.2-fpm status | grep running
+printf "________________________ \n"
+
 composer -V
 printf "________________________ \n"
 
@@ -131,4 +139,3 @@ printf "________________________ \n"
 node -v
 nvm ls
 printf "________________________ \n"
-
