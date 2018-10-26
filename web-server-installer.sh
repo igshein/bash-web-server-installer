@@ -1,6 +1,6 @@
 #! /bin/bash
 
-printf "You are about to install the program: Git, Nginx, PHP, Composer, Xdebug, MySQL, PostgreSQL, Redis server, Memcached, Node.Js & NPM \n
+printf "You are about to install the program: Git, Nginx, PHP 7.2, Composer, Xdebug, MySQL 8, PostgreSQL, Redis server, Memcached, Node.Js & NPM \n
 Press ENTER to continue: \n"
 read enter
 
@@ -70,7 +70,15 @@ sudo service php7.2-fpm restart
 
 ## MySQL
 printf "============ Install MySQL ============ \n"
-sudo apt install mysql-server
+sudo apt-get install wget -y
+sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.10-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.10-1_all.deb && rm -f mysql-apt-config_0.8.10-1_all.deb
+sudo apt-get update
+sudo apt-get install mysql-community-server -y
+## Setting MySQL
+mysql -u root mysql -e "update user set plugin='mysql_native_password' where user='root' and host='localhost'; flush privileges;"
+mysql_secure_installation
+
 sudo apt-get install php7.2-mysql
 sudo service php7.2-fpm restart
 
