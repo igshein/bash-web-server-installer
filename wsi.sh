@@ -38,7 +38,7 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt-get install php7.2
 sudo apt-get install php7.2-cli php7.2-common php7.2-curl php7.2-mbstring php7.2-dom php7.2-xml
-sudo apt-get install php7.2-fpm php-pear php7.2-dev php7.2-gd php7.2-zip
+sudo apt-get install php7.2-fpm php7.2-mysql php-pear php7.2-dev php7.2-gd php7.2-zip
 sudo service php7.2-fpm restart
 
 
@@ -76,11 +76,8 @@ sudo dpkg -i mysql-apt-config_0.8.10-1_all.deb && rm -f mysql-apt-config_0.8.10-
 sudo apt-get update
 sudo apt-get install mysql-community-server -y
 ## Setting MySQL
-mysql -u root mysql -e "update user set plugin='mysql_native_password' where user='root' and host='localhost'; flush privileges;"
-mysql_secure_installation
-
-sudo apt-get install php7.2-mysql
-sudo service php7.2-fpm restart
+## mysql -u root mysql -e "update user set plugin='mysql_native_password' where user='root' and host='localhost'; flush privileges;"
+## mysql_secure_installation
 
 
 ## PostgreSQL
